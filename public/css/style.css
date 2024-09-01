@@ -1,0 +1,265 @@
+/* Táblázat stílusok */
+.table-container {
+    overflow-x: auto; /* Vízszintes görgetés engedélyezése */
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 3px;
+    text-align: left;
+}
+td {
+    font-size: 14px;
+}
+/* Az oszlopfejlécek rendezési nyilainak stílusozása */
+th {
+    background-color: #f2f2f2;
+    font-size: 15px;
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+    white-space: nowrap;
+    user-select: none;
+}
+th a {
+    text-decoration: none;
+    color: inherit;
+    align-items: center;
+}
+th a::after {
+    content: ' ▽△';
+    color: #b0b0b0;
+    font-size: 0.8em;
+    margin-left: 5px;
+    transition: color 0.3s, transform 0.3s;
+}
+th a.sort-asc::after {
+    content: '▲▽';
+    color: #474646;
+    transform: rotate(0deg);
+}
+th a.sort-desc::after {
+    content: '▼△';
+    color: #474646;
+    transform: rotate(180deg);
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+td.actions {
+    width: 100px;
+}
+td.actions a, td.actions button {
+    display: inline-block;
+    width: 100px;
+    padding: 5px 10px;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+    box-sizing: border-box;
+}
+td.actions a {
+    background-color: #ff9800;
+    border: 1px solid #e68900;
+}
+td.actions a:hover {
+    background-color: #e68900;
+}
+td.actions button {
+    background-color: #f44336;
+    border: none;
+}
+td.actions button:hover {
+    background-color: #c62828;
+}
+/* Lapozó gombok */
+.pagination-container {
+    text-align: center;
+    margin-top: 20px;
+}
+.pagination-container .pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.pagination-container .pagination li {
+    display: inline;
+}
+.pagination-container .pagination li a,
+.pagination-container .pagination li span {
+    color: #007bff;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    margin-right: 4px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.pagination-container .pagination li a:hover,
+.pagination-container .pagination li span.current {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+.pagination-container .pagination li a.previous,
+.pagination-container .pagination li a.next,
+.pagination-container .pagination li a.first,
+.pagination-container .pagination li a.last {
+    background-color: #e1e1e1;
+    color: #333;
+    border-color: #ccc;
+}
+.pagination-container .pagination li a.previous:hover,
+.pagination-container .pagination li a.next:hover,
+.pagination-container .pagination li a.first:hover,
+.pagination-container .pagination li a.last:hover {
+    background-color: #ccc;
+}
+.pagination-container .pagination li span.current {
+    background-color: #007bff;
+    color: white;
+}
+.pagination-container .pagination li a.first::before,
+.pagination-container .pagination li a.last::before {
+    font-size: 16px;
+}
+/* Alap stílusok */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+h1, h2 {
+    color: #333;
+    margin-top: 0;
+}
+form {
+    margin-bottom: 20px;
+}
+input[type="text"], input[type="date"] {
+    width: 300px;;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+/* Ruhaméret legördülő menü stílusai */
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+}
+.select-wrapper select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #f9f9f9 url('data:image/svg+xml;charset=UTF-8,%3Csvg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M1 1l4 4 4-4" stroke="%23333" stroke-width="2" fill="none"/%3E%3C/svg%3E') no-repeat right 10px center;
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    appearance: none; /* Eltávolítja az alapértelmezett böngésző stílusokat */
+    -webkit-appearance: none; /* Safari és Chrome */
+    -moz-appearance: none; /* Firefox */
+}
+/* Gombok stílusai */
+button, a.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    box-sizing: border-box;
+    height: 30px;
+    margin: 2px;
+}
+/* Alapértelmezett gomb */
+button {
+    background-color: #4CAF50;
+}
+button:hover {
+    background-color: #306d32;
+}
+/* Szerkesztés gomb */
+a.button.edit {
+    background-color: #ff9800;
+}
+a.button.edit:hover {
+    background-color: #e68900;
+}
+/* Törlés gomb */
+button.delete {
+    background-color: #f44336;
+}
+button.delete:hover {
+    background-color: #c62828;
+}
+/* Üzenetek */
+p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+p[style*="color: red"] {
+    color: red;
+    font-weight: bold;
+}
+p[style*="color: green"] {
+    color: green;
+    font-weight: bold;
+}
+/* Validációs üzenetek stílusa */
+.validation-errors {
+        color: red;
+        font-size: 13px;
+}
+/* Flexbox elrendezés a formokhoz */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.form-group label {
+    width: 150px;
+    margin-right: 15px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group select {
+    width: 400px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.select-wrapper {
+    width: 400px;
+}
